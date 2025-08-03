@@ -12,73 +12,7 @@ export default function AICreativeProductionPage() {
       <Header />
 
       {/* Hero Section */}
-      {/* Hero Section with YouTube Background */}
-<div className="min-h-screen relative overflow-hidden">
-  {/* YouTube背景動画 */}
-  <div className="absolute inset-0 z-0">
-    <iframe
-      src="https://www.youtube.com/embed/ChOPQItj3mM?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playlist=ChOPQItj3mM&start=0&end=0&version=3&enablejsapi=1&origin=window.location.origin"
-      className="w-full h-full scale-150 -translate-x-16 -translate-y-16"
-      style={{
-        minWidth: '100vw',
-        minHeight: '100vh',
-        width: '100vw',
-        height: '56.25vw',
-        minHeight: '100vh',
-        objectFit: 'cover'
-      }}
-      allow="autoplay; encrypted-media"
-      frameBorder="0"
-    />
-    <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-  </div>
-
-  {/* コンテンツ */}
-  <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
-    <div className="text-center max-w-4xl mx-auto">
-      <motion.h1 
-        className="text-6xl md:text-8xl font-bold mb-6 text-white drop-shadow-2xl"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        STUDIO KAHUA
-      </motion.h1>
-      
-      <motion.h2 
-        className="text-2xl md:text-3xl mb-6 text-white drop-shadow-lg"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.3 }}
-      >
-        Revolutionary Visual Innovation from Japan
-      </motion.h2>
-      
-      <motion.p 
-        className="text-lg md:text-xl mb-8 text-gray-100 max-w-2xl mx-auto drop-shadow-lg"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.6 }}
-      >
-        Where Eastern Aesthetics Meets Cutting-Edge AI Technology - Creating the impossible since 2022
-      </motion.p>
-      
-      <motion.div 
-        className="flex flex-col sm:flex-row gap-4 justify-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.9 }}
-      >
-        <button className="bg-yellow-400 text-black px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105">
-          Explore Our Work →
-        </button>
-        <button className="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-full font-semibold hover:bg-yellow-400 hover:text-black transition-colors shadow-lg hover:shadow-xl transform hover:scale-105">
-          Begin Your Project
-        </button>
-      </motion.div>
-    </div>
-  </div>
-</div>
+      <HeroSection />
 
       {/* Achievements Section */}
       <AchievementsSection />
@@ -142,11 +76,19 @@ function Header() {
   )
 }
 
+function HeroSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
 
-
-
-
- 
+  return (
+    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-900/30 to-black" />
+      <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
+        <motion.h1
+          className="text-7xl md:text-9xl font-bold mb-6 bg-gradient-to-r from-gold via-yellow-400 to-gold bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
         >
           STUDIO KAHUA
         </motion.h1>
