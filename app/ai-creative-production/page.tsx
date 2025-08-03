@@ -142,19 +142,11 @@ function Header() {
   )
 }
 
-function HeroSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
 
-  return (
-    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-900/30 to-black" />
-      <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-        <motion.h1
-          className="text-7xl md:text-9xl font-bold mb-6 bg-gradient-to-r from-gold via-yellow-400 to-gold bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1 }}
+
+
+
+ 
         >
           STUDIO KAHUA
         </motion.h1>
