@@ -35,7 +35,7 @@ export default function Footer() {
         </nav>
 
         <p className="mt-10 text-center text-sm leading-5 opacity-60" style={{ color: "#f4f4f4" }}>
-          © 2024 KAHUA. All rights reserved. | 魂から生まれる創造を、技術と共に。
+          © 2022-2025 KAHUA. All rights reserved. | 魂から生まれる創造を、技術と共に。
         </p>
       </div>
     </footer>

@@ -32,8 +32,8 @@ const services = [
     icon: GraduationCap,
     gradient: "from-emerald-500 via-teal-600 to-cyan-700",
     cta: "講座詳細",
-    price: "無料カウセリング実施期間あり",
-    link: "/englishschool",
+    price: "無料体験レッスン",
+    link: "#contact",
     hasMultipleOptions: true,
   },
 ]
@@ -45,7 +45,6 @@ function ServiceCard({ service, index }: { service: (typeof services)[0]; index:
 
   return (
     <motion.div
-      onClick={() => window.location.href = service.link}
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}

@@ -209,7 +209,7 @@ function PhilosophySection() {
 }
 
 function FeaturesSection() {
-   const ref = useRef(null)
+  const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
  const features = [
@@ -317,6 +317,7 @@ function CareerSection() {
       description: "SNS・動画・メディアにおいて、他では真似できない独自コンテンツを継続的に生み出すプロフェッショナル",
     },
   ]
+
   return (
     <section ref={ref} id="career" className="py-32 px-8 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -331,21 +332,15 @@ function CareerSection() {
           <p className="text-lg font-light text-gray-600 max-w-2xl mx-auto">進化した創造者たちが歩む、6つの職業パス</p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.0, delay: 0.3 }}
-          className="relative mb-16"
-        >
-<Image
-        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&h=600&fit=crop"
-        alt="AI時代のクリエイティブプロフェッショナル - 6人の多様な創造者たちの未来的ポートレート"
-        width={1200}
-        height={600}
-        className="w-full h-96 object-cover grayscale hover:grayscale-0 transition-all duration-700"
-      />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-50/20 via-transparent to-transparent" />
-        </motion.div>
+        <div className="relative mb-16">
+          <Image
+            src="/placeholder.svg?height=400&width=1200&text=AI+Beings+Group+Portrait"
+            alt="AI的存在の群像"
+            width={1200}
+            height={400}
+            className="w-full h-64 object-cover grayscale"
+          />
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {careers.map((career, index) => (
@@ -353,16 +348,16 @@ function CareerSection() {
              key={career.englishTitle}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="p-8 border border-gray-200 hover:border-black transition-all duration-300 group"
             >
               <h3 className="text-lg font-light text-black mb-4 group-hover:text-gray-600 transition-colors">
   {career.englishTitle}
 </h3>
-<h4 className="text-sm font-medium text-gray-500 mb-2">
+<h4 className="text-md font-medium text-gray-700 mb-2">
   {career.japaneseTitle}
 </h4>
-              <p className="text-sm font-light text-gray-600 leading-relaxed">{career.description}</p>
+<p className="text-sm font-light text-gray-600 leading-relaxed">{career.description}</p>
             </motion.div>
           ))}
         </div>
@@ -465,7 +460,7 @@ function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gray-200 text-center">
           <p className="text-xs font-light text-gray-500">
-            © 2024 SELF-GEN | Self Generation AI塾. All rights reserved.
+            © 2022-2025 SELF-GEN | Self Generation AI塾. All rights reserved.
           </p>
         </div>
       </div>
